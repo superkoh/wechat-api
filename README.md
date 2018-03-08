@@ -8,6 +8,7 @@
 
 * 获取access_token
 * 获取缓存的access_token
+* 获取微信服务器IP地址
     
 [查看demo](src/test/java/com/github/superkoh/wechat/base/WxBaseApiTest.java)
 
