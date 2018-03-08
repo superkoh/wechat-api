@@ -1,0 +1,69 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+    }
+}
+
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.11'
+    id 'java'
+    id 'maven-publish'
+}
+
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+group 'com.github.superkoh.wechat'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.55'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.46'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+    compile 'com.github.ben-manes.caffeine:caffeine:2.6.2'
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.1.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.1.0'
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    repositories {
+        maven {
+            url "file:///Users/KOH/Projects/superkoh/com.github.superkoh/maven"
+        }
+    }
+
+    publications {
+        mavenJava(MavenPublication) {
+            groupId group
+            artifactId 'wechat-api'
+            version version
+
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
+}
