@@ -2,8 +2,4 @@
 
 微信 Java sdk
 
-#### 已完成接口
-
-[公众号：基础接口](公众号：基础接口)
-
-[公众号：自定义菜单接口](公众号：自定义菜单接口)
+请参阅 [wiki](https://github.com/superkoh/wechat-api/wiki)
