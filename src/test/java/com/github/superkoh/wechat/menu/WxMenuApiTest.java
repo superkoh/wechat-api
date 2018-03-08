@@ -7,9 +7,10 @@ import com.github.superkoh.wechat.Constant;
 import com.github.superkoh.wechat.base.WxBaseApi;
 import com.github.superkoh.wechat.common.WxException;
 import com.github.superkoh.wechat.menu.bean.WxButton;
+import com.github.superkoh.wechat.menu.bean.WxCombinedMenu;
 import com.github.superkoh.wechat.menu.bean.WxMenu;
 import java.util.ArrayList;
-import lombok.val;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class WxMenuApiTest {
@@ -19,11 +20,11 @@ class WxMenuApiTest {
 
   @Test
   void create() throws WxException {
-    val token = baseApi.cachedToken(Constant.appId, Constant.secret);
+    String token = baseApi.cachedToken(Constant.appId, Constant.secret);
     assertNotNull(token);
     WxButton button = WxButton.viewButton("百度", "https://www.baidu.com");
     WxMenu menu = new WxMenu();
-    val list = new ArrayList<WxButton>();
+    List<WxButton> list = new ArrayList<>();
     list.add(button);
     menu.setButton(list);
 
@@ -32,15 +33,15 @@ class WxMenuApiTest {
 
   @Test
   void get() throws WxException {
-    val token = baseApi.cachedToken(Constant.appId, Constant.secret);
-    val menuRes = menuApi.get(token);
-    assertEquals("百度", menuRes.getMenu().getButton().get(0).getName());
-    assertNotNull(menuRes);
+    String token = baseApi.cachedToken(Constant.appId, Constant.secret);
+    WxCombinedMenu combinedMenu = menuApi.get(token);
+    assertEquals("百度", combinedMenu.getMenu().getButton().get(0).getName());
+    assertNotNull(combinedMenu);
   }
 
   @Test
   void delete() throws WxException {
-    val token = baseApi.cachedToken(Constant.appId, Constant.secret);
+    String token = baseApi.cachedToken(Constant.appId, Constant.secret);
     menuApi.delete(token);
   }
 }
