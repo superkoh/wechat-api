@@ -34,6 +34,7 @@ dependencies {
     compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.55'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.46'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.4'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
     compile 'com.github.ben-manes.caffeine:caffeine:2.6.2'
