@@ -104,7 +104,7 @@ abstract public class WxAbstractApi {
     }
   }
 
-  protected static <T> T get(Request.Builder request, Class<T> clazz, boolean cacheable)
+  protected static <T> T get(Request.Builder request, Class<T> clazz)
       throws WxException {
     try {
       Request req = request.get().build();
@@ -121,10 +121,6 @@ abstract public class WxAbstractApi {
       logger.error(e.getMessage(), e);
       throw new WxException(-1, e.getMessage());
     }
-  }
-
-  protected static <T> T get(Request.Builder request, Class<T> clazz) throws WxException {
-    return get(request, clazz, false);
   }
 
   protected static void post(Request.Builder request, Object body) throws WxException {
