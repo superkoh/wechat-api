@@ -1,22 +1,23 @@
 package com.github.superkoh.wechat.api.template.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.superkoh.wechat.common.bean.WxMiniProgram;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Data;
 
 @Data
-public class WxTemplate {
+public class WxOpenTemplate {
 
   @JsonProperty("touser")
   private String toUser;
   @JsonProperty("template_id")
   private String templateId;
-  private String url;
-  @JsonProperty("miniprogram")
-  private WxMiniProgram miniProgram;
+  private String page;
+  @JsonProperty("form_id")
+  private String formId;
   private Map<String, InnerData> data = new HashMap<>();
+  @JsonProperty("emphasis_keyword")
+  private String emphasisKeyword;
 
   @Data
   private class InnerData {
@@ -33,4 +34,5 @@ public class WxTemplate {
   public void addData(String keyword, String value, String color) {
     data.put(keyword, new InnerData(value, color));
   }
+
 }
