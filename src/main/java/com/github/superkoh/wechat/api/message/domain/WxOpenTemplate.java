@@ -1,4 +1,4 @@
-package com.github.superkoh.wechat.api.template.domain;
+package com.github.superkoh.wechat.api.message.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.HashMap;
