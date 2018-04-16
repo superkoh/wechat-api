@@ -1,9 +1,9 @@
 package com.github.superkoh.wechat.api.sns;
 
 import com.github.superkoh.wechat.api.WxAbstractApi;
-import com.github.superkoh.wechat.common.WxException;
 import com.github.superkoh.wechat.api.sns.domain.WxSnsSession;
 import com.github.superkoh.wechat.api.sns.domain.WxSnsUserInfo;
+import com.github.superkoh.wechat.common.WxException;
 import java.io.IOException;
 import java.util.Objects;
 import lombok.val;
@@ -48,6 +48,5 @@ public class WxSnsApi extends WxAbstractApi {
     }
     return null;
   }
-
 
 }
