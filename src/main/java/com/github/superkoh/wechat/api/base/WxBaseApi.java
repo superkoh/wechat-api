@@ -20,9 +20,9 @@ public class WxBaseApi extends WxAbstractApi {
   /**
    * 获取access_token
    *
-   * https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+   * https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET
    *
-   * @See <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140183">doc</a>
    */
   public WxAccessToken token() throws WxException {
     return getWxAccessToken();
@@ -33,7 +33,7 @@ public class WxBaseApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=ACCESS_TOKEN
    *
-   * @See <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140187">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140187">doc</a>
    */
   public WxIpList getCallbackIp() throws WxException {
     return get(

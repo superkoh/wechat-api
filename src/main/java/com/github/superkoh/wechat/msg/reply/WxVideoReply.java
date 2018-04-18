@@ -10,7 +10,7 @@ import lombok.ToString;
 /**
  * 回复视频消息
  *
- * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140543">doc</a>
+ * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140543">doc</a>
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)

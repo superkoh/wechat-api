@@ -10,7 +10,7 @@ import lombok.ToString;
  *
  * 点击菜单拉取消息时的事件推送 CLICK, 点击菜单跳转链接时的事件推送 VIEW
  *
- * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140454">doc</a>
+ * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140454">doc</a>
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)

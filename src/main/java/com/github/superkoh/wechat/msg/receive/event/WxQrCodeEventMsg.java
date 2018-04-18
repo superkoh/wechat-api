@@ -10,7 +10,7 @@ import lombok.ToString;
  *
  * 用户未关注时，进行关注后的事件推送 subscribe, 用户已关注时的事件推送 SCAN
  *
- * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140454">doc</a>
+ * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140454">doc</a>
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)

@@ -23,7 +23,7 @@ public class WxMenuApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141013">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421141013">doc</a>
    */
   public void create(WxMenu menu) throws WxException {
     post(
@@ -39,7 +39,7 @@ public class WxMenuApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/menu/get?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141014">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421141014">doc</a>
    */
   public WxCombinedMenu get() throws WxException {
     return get(
@@ -55,7 +55,7 @@ public class WxMenuApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141015">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421141015">doc</a>
    */
   public void delete() throws WxException {
     get(
@@ -70,7 +70,7 @@ public class WxMenuApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/menu/addconditional?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455782296">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1455782296">doc</a>
    */
   public void addConditional(WxConditionalMenu conditionalMenu)
       throws WxException {
@@ -87,7 +87,7 @@ public class WxMenuApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/menu/delconditional?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455782296">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1455782296">doc</a>
    */
   public void delConditional() throws WxException {
     get(
@@ -102,7 +102,7 @@ public class WxMenuApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/menu/trymatch?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1455782296">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1455782296">doc</a>
    */
   public WxMenu tryMatch() throws WxException {
     return get(

@@ -24,7 +24,7 @@ public class WxMessageApi extends WxAbstractApi {
    *
    * https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1433751277">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1433751277">doc</a>
    */
   public void templateSend(WxTemplate template)
       throws WxException {

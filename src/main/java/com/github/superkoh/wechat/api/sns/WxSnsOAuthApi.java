@@ -25,9 +25,9 @@ public class WxSnsOAuthApi extends WxAbstractApi {
   /**
    * 通过code换取网页授权access_token
    *
-   * https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
+   * https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140842">doc</a>
    */
   public WxSnsOAuth2AccessToken oAuth2AccessToken(String code) throws WxException {
     return get(
@@ -43,9 +43,9 @@ public class WxSnsOAuthApi extends WxAbstractApi {
   /**
    * 刷新access_token（如果需要）
    *
-   * https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=APPID&grant_type=refresh_token&refresh_token=REFRESH_TOKEN
+   * https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=APPID&amp;grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140842">doc</a>
    */
   public WxSnsOAuth2AccessToken oAuth2RefreshToken(String refreshToken) throws WxException {
     return get(
@@ -60,9 +60,9 @@ public class WxSnsOAuthApi extends WxAbstractApi {
   /**
    * 拉取用户信息(需scope为 snsapi_userinfo)
    *
-   * https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
+   * https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140842">doc</a>
    */
   public WxSnsUserInfo oAuth2UserInfo(String openId, String accessToken, String lang)
       throws WxException {
@@ -89,9 +89,9 @@ public class WxSnsOAuthApi extends WxAbstractApi {
   /**
    * 检验授权凭证（access_token）是否有效
    *
-   * https://api.weixin.qq.com/sns/auth?access_token=ACCESS_TOKEN&openid=OPENID
+   * https://api.weixin.qq.com/sns/auth?access_token=ACCESS_TOKEN&amp;openid=OPENID
    *
-   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842">doc</a>
+   * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;=mp1421140842">doc</a>
    */
   public boolean checkAccessToken(String openId, String accessToken) throws WxException {
     get(
