@@ -17,7 +17,7 @@ plugins {
 
 apply plugin: 'org.junit.platform.gradle.plugin'
 
-group 'com.github.superkoh.wechat'
+group 'com.github.superkoh'
 //version '1.0.3'
 
 sourceCompatibility = 1.8
