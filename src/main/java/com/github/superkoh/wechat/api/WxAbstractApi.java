@@ -7,13 +7,12 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.superkoh.wechat.common.WxException;
 import com.github.superkoh.wechat.common.bean.WxAccessToken;
+import com.github.superkoh.wechat.common.cache.Cache;
+import com.github.superkoh.wechat.utils.WxCacheUtils;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
 import java.security.Security;
-import java.time.Instant;
-import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -36,9 +35,6 @@ abstract public class WxAbstractApi {
 
   protected static final OkHttpClient httpClient;
   protected static final ObjectMapper objectMapper;
-
-  protected static final Map<String, String> tokenCache = new ConcurrentHashMap<>();
-  protected static final Map<String, Instant> tokenExpireCache = new ConcurrentHashMap<>();
 
   static {
     httpClient = new OkHttpClient();
@@ -72,18 +68,19 @@ abstract public class WxAbstractApi {
   }
 
   protected String getAccessToken() throws WxException {
-    String key = appId + "_" + appSecret;
-    String keyForExpire = key + "_expire";
-    if (tokenExpireCache.containsKey(keyForExpire) && tokenCache.containsKey(key)) {
-      Instant expireTime = tokenExpireCache
-          .getOrDefault(keyForExpire, Instant.now().minusSeconds(1800));
-      if (expireTime.isAfter(Instant.now())) {
-        return tokenCache.get(key);
+    String accessToken;
+    String key = appId + "_" + appSecret + "_access_token";
+    Cache cache = WxCacheUtils.getCache();
+    if (null != cache) {
+      accessToken = (String) cache.get(key);
+      if (null != accessToken) {
+        return accessToken;
       }
     }
     WxAccessToken token = getWxAccessToken();
-    tokenCache.put(key, token.getAccessToken());
-    tokenExpireCache.put(keyForExpire, Instant.now().plusSeconds(token.getExpiresIn() / 2));
+    if (null != cache) {
+      cache.put(key, token.getAccessToken());
+    }
     return token.getAccessToken();
   }
 
