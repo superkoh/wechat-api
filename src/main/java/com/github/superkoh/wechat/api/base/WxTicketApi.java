@@ -19,7 +19,7 @@ public class WxTicketApi extends WxAbstractApi {
   /**
    * 获取微信ticket
    *
-   * https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi
+   * https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi
    *
    * @see <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115">doc</a>
    */
